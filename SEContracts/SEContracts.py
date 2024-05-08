@@ -11,8 +11,8 @@ coordinates_accept = []
 coordinates_finish = []
 
 exit_flag = False
-sleepTime = 0.001
-pauseBeforeOk = 0.2
+sleepTime = 0
+pauseBeforeOk = 0.15
 key_control ='Insert'
 key_complete ='Page_Down'
 key_accept ='Page_Up'
@@ -57,7 +57,7 @@ def EraseSaves():
             print("Файлы сохранения успешно удалены.")
         except FileNotFoundError:
             print("Файлы сохранения не найдены.")
-        print(f"Примите любой контракт, используя кнопку вместо мышки {key_control}")
+        print(f"Примите любой контракт, используя кнопку  {key_control} вместо мышки")
         for pointName in 'Принять', 'Да':
             coordinates_accept.append(RecordCoordinates(pointName))
         print("Переключитесь на вкладку Принятые контракты щелчком мыши и выберете любой контракт, который можете завершить")
@@ -77,7 +77,7 @@ def EraseSaves():
     
         
 def RecordCoordinates(pointName):
-    print(f"Наведите курсор мыши на кнопку {pointName} и нажмите {key_control} для записи координат...")
+    print(f"Наведите курсор мыши на кнопку {pointName} и нажмите {key_control} для записи ее координат...")
     keyboard.wait(key_control)
     coords = pyautogui.position()
     coordinate = Coordinates(coords.x, coords.y)
@@ -128,7 +128,7 @@ def main():
         print("Найдено сохранение координат.")
         Load()
     else:
-        print("Сохраненные координаты отсутствуют.")
+        print("Следуйте указаниям для записи координат.")
         print(f"Примите любой контракт, используя кнопку {key_control} вместо мышки ")
         for pointName in 'Принять', 'Да':
             coordinates_accept.append(RecordCoordinates(pointName))
@@ -137,6 +137,9 @@ def main():
         for pointName in 'Завершить', 'Инвертарь персонажа', 'Название вашего корабля', 'Принять', 'Ок':
             coordinates_finish.append(RecordCoordinates(pointName))
         Save()
+        print(f"")
+        print(f" Координаты записаны и сохранены в папке .exe файла.")
+        print(f"")
 
     thread_Accepting = threading.Thread(target = ContractsAccepting, args = (coordinates_accept,))
     thread_Accepting.start()
@@ -146,10 +149,9 @@ def main():
     thread_Erasing.start()
     print(f"")
     print(f"==================Управление==================")
-    print(f" Координаты записаны и сохранены в папке .exe файла.")
     print(f"{key_accept} - Макрос примет контракт.")
     print(f"{key_complete} - Завершит контракт.")
-    print(f"Delete - Удалит сохраненные координаты для их перезаписи.")
+    print(f"Delete - Удалит сохраненные координаты и запишет новые.")
     print(f"===============================================")
     print(f"")
 
