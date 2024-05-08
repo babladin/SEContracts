@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "SEContracts", "SEContracts\SEContracts.pyproj", "{4F323FD9-E3E5-4419-A331-E0E3066D27BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4F323FD9-E3E5-4419-A331-E0E3066D27BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F323FD9-E3E5-4419-A331-E0E3066D27BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5238E0F5-C8D3-4C73-A62D-A85436FF434E}
+	EndGlobalSection
+EndGlobal
