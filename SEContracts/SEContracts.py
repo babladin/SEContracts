@@ -11,8 +11,8 @@ coordinates_accept = []
 coordinates_finish = []
 
 exit_flag = False
-sleepTime = 0.001
-pauseBeforeOk = 0.2
+sleepTime = 0
+pauseBeforeOk = 0.1
 key_control ='Insert'
 key_complete ='Page_Down'
 key_accept ='Page_Up'
